@@ -1,6 +1,6 @@
 # node-red-contrib-blink
 
-## This node mimicks the CoDeSys Lamp Application Example
+## This node is developed as an example similar to the CoDeSys Lamp Application Example
 
 Built for example of creating custom nodes in the palette.
 
