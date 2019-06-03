@@ -1,0 +1,38 @@
+<script type="text/javascript">
+    RED.nodes.registerType('blink',{
+        category: 'function',
+        color: '#EBEDEC',
+        defaults: {
+            rate: {value: "1"},
+            name: {value: ""},
+            topic: {value:""}
+        },
+        inputs:1,
+        outputs:2,
+        icon: "blink.png",
+        label: function() {
+            return this.name||"blink";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="blink">
+    <div class="form-row">
+        <label for="node-input-rate"><i class="fa fa-repeat"></i> Blink Rate (milliseconds)</label>
+        <input type="number" id="node-input-rate" placeholder="1"  style="width: 150px;">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="fa fa-tasks"></i>Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic"  style="width: 150px;">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i>Name</label>
+        <input type="text" id="node-input-name" placeholder="Name"  style="width: 150px;">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="blink">
+    <p>
+        Blinks the output at a specified rate<br/>
+    </p>
+</script> 
