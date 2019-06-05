@@ -7,7 +7,7 @@ module.exports = function(RED) {
        	var node = this;
        	var blinkRate = n.rate;
        	var nodeTopic = n.topic;
-	var context = this.context();
+        var context = this.context();
 
        this.on('input', function(msg) {
           var state = msg.payload;
@@ -16,7 +16,11 @@ module.exports = function(RED) {
           var startTime = context.get('startTime')||0;
           var now = Date.now();
           var millis = now - startTime; // Elapsed time in ms
-          //var blinkRate = context.get('blinkRate')||1000;
+          blinkRate = context.get('blinkRate')||1000;
+
+          if (msg.topic === 'blinkrate')  {
+            context.set('blinkRate', msg.payload);
+          } 
 
           switch(state) {
           case 0:
